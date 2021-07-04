@@ -1,0 +1,74 @@
+.nav-search 
+{
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: rgba(10, 10, 26, 0.83);
+
+}
+
+.Logo-Title h1
+{
+  color: rgb(62, 129, 228);
+  font-size: 1.6em;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  padding-left: 20px;
+  padding-top: 10px;
+}
+
+.Logo-Title
+{
+  display: flex;
+  width: 400px;
+}
+
+.movies-main
+{
+  display: flex;
+  
+}
+.Crad-movies
+{
+  width: 400px;
+  margin: 40px;
+}
+
+
+#App
+{
+  background-color : #141414 ;
+  color: floralwhite;
+}
+
+.caontainer-liste
+{
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  background-color: rgba(82, 78, 78, 0.434);
+  border-radius:  5px ;
+  width:200px;
+  margin: 20px;
+  
+  
+}
+
+.caontainer-liste img
+{
+  border-radius: 5px 5px 0 0;
+}
+
+p, h4 {
+  font-family: cambria;
+  font-size: 0.6em;
+  text-align: center;
+}
+
+
+/* .movie-app > .row
+{
+  overflow-x: auto;
+  flex-wrap: nowrap;
+} */
+
+
