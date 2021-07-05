@@ -1,15 +1,10 @@
 import React,{useState} from 'react';
 import popMovies from '../Logo.png';
 import {Form,FormControl,Button,Navbar} from 'react-bootstrap';
-// import MovieList from './MovieList'
 
 
-function Navbars() {
-                    const [serchValeu, setserchValeu] = useState(['']);
-                    
-                    // const filtre = MovieList.filtre(title => {
-                    //                      return title.title.toLowerCase().inclusdes(serchValeu.toLowerCase())
-                    // }) 
+function Navbars({setsearchmovie}) {
+
                     return (
                                         <div >
                                         <Navbar className="bg-light justify-content-between">
@@ -18,13 +13,12 @@ function Navbars() {
                                         <h1> Pop Movies </h1>
                                         </div>
                                         <Form inline>
-                                        {serchValeu}
                                         <FormControl
                                         type="text"
                                         placeholder="Search"
-                                        className=" mr-sm-2"
+                                        className=" mr-2"
                                         id='serchbar'
-                                        onChange= { e => setserchValeu(e.target.valeu)}
+                                        onChange= { e => setsearchmovie(e.target.value)}
                                         />
                                         <Button type="submit">Submit</Button>
                                         </Form>

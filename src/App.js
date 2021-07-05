@@ -1,8 +1,11 @@
 import React, {useState} from 'react';
 import './App.css';
 import Navbars from './Components/Navbars';
-// import MovieList from './Components/MovieList';
+import MovieList from './Components/MovieList';
 import "bootstrap/dist/css/bootstrap.min.css";
+import AddMovie from './Components/AddMovie';
+import ReactStars from "react-rating-stars-component";
+
 
 
 const App = () => {
@@ -89,39 +92,33 @@ const App = () => {
       rate: 2
     }
   ]);
-  const MovieList =()=> {
-                    
-    return (
-                        <>
-                                            {movies.map((movie, index) => (  
-                                            <div key ={index} className='caontainer-liste'>
-                                            <img src={movie.posterUrl} alt='movies' style={{width:'200', height:'200px'}} />
-                                            <h4> {movie.title} </h4>
-                                            <p>{movie.description}</p>
-                                            <span>   </span>
-                                            </div>
-                                            ))}                               
 
-                        </>
-                        );};
- 
-  const [searchmovie, setsearchmovie] = useState([''])
-
+  const [searchmovie, setSearchmovie] = useState("");
+  const [rating, setRating]=useState(0)
+  const AddNewmovie = (newmovie)=> SetMovies([...movies,newmovie])
+          
+  
       return ( 
       <div id="App">
-        <input
-        type='text'
-        placeholder='Search'
-        className="form-control"
-        onChange= { e => setsearchmovie(e.target.valeu)}
-       />
-       <Navbars/>
-
-      <div className='container-fluid  movie-app '>
-            <div className='row    justify-content-around'>  
-            <MovieList  movies={movies}/>
-            </div>
-      </div>
+          <Navbars setsearchmovie={setSearchmovie} />
+                  <div className='container-fluid  movie-app '>
+                  <div style={{ display:'flex', justifyContent:'center', margin:'10px' }}>
+                  <ReactStars
+                              style={{textAlign:'center', padding:'50px', whidth:'40px' }}
+                              count={5}
+                              size={24}
+                              activeColor="#ffd700"
+                              />
+                  </div>
+                        <div className='row   justify-content-around'>  
+                        <MovieList  movies={movies} searchmovie={searchmovie} rating={rating}   search={searchmovie} />
+                        </div>
+                  </div>
+                  <div style={{textAlign:'center', marginBottom:'10px', padding:'50px' }}>
+                  <AddMovie AddNewmovie={AddNewmovie} />
+                  
+                  </div>
+          
       </div>
       );
 };
